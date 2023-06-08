@@ -1,7 +1,7 @@
 import express from 'express';
 const app = express();
 
-const APP_PORT = process.env.APP_PORT || 3000;
+const APP_PORT = process.env.80 || 80;
 const APP_BASE_URL = process.env.APP_BASE_URL || '/';
 
 app.get('/health-check', (req, res) => {
@@ -29,6 +29,6 @@ app.use((req, res) => {
     res.sendStatus(404);
 })
 
-app.listen(APP_PORT, () => {
-    console.log(`server listening on port : ${APP_PORT}`);
+app.listen(80, () => {
+    console.log(`server listening on port : 80`);
 });
